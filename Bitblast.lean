@@ -37,3 +37,13 @@ theorem BitVec.concat_adc_concat_snd (x y : BitVec w) (a b c : Bool) :
 
 example (x y : BitVec 4) : x + y = y + x := by
   bitblast
+  /-
+  b✝⁷ b✝⁶ b✝⁵ b✝⁴ b✝³ b✝² b✝¹ b✝: Bool
+  ⊢ xor b✝⁷ b✝⁶ = xor b✝⁶ b✝⁷ ∧
+    xor (xor b✝⁵ b✝⁴) (b✝⁷ && b✝⁶) = xor (xor b✝⁴ b✝⁵) (b✝⁶ && b✝⁷) ∧
+      xor (xor b✝³ b✝²) (Bool.atLeastTwo b✝⁵ b✝⁴ (b✝⁷ && b✝⁶)) =
+          xor (xor b✝² b✝³) (Bool.atLeastTwo b✝⁴ b✝⁵ (b✝⁶ && b✝⁷)) ∧
+        xor (xor b✝¹ b✝) (Bool.atLeastTwo b✝³ b✝² (Bool.atLeastTwo b✝⁵ b✝⁴ (b✝⁷ && b✝⁶))) =
+          xor (xor b✝ b✝¹) (Bool.atLeastTwo b✝² b✝³ (Bool.atLeastTwo b✝⁴ b✝⁵ (b✝⁶ && b✝⁷)))
+  -/
+  sorry
